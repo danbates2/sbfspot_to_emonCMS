@@ -98,5 +98,9 @@ def main():
         #print(". Concatenate URL string")
         url_stringing()
 
+        #print(". Posting to emonCMS")
+        post_to_emonCMS()
+
+
 if __name__ == '__main__':
     main()
