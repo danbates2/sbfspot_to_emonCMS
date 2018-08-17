@@ -13,8 +13,8 @@ import requests
 
 #API KEY
 apikey = "yourapikey"
-database = "/home/pi/data/smadata/SBFspot.db"
-
+#database = "/home/pi/data/smadata/SBFspot.db"
+database = "SBFspot.db"
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -63,9 +63,9 @@ def display_last_from_table(conn):
 def OrderedDict_to_JSON(): #https://docs.python.org/2/library/collections.html#collections.OrderedDict
     global smaJSONstring
 
-    names_lastrow_ordered = OrderedDict(zip(names, rows))
+    names_firstrow_ordered = OrderedDict(zip(names, rows))
 
-    smaJSONstring = json.dumps(OrderedDict(names_lastrow_ordered))
+    smaJSONstring = json.dumps(OrderedDict(names_firstrow_ordered))
 
     #print(". Create OrderedDict from two lists and convert to JSON")
     #print (smaJSONstring)
