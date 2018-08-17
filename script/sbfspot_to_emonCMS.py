@@ -77,6 +77,8 @@ def url_stringing():
     emoncmsaddress = "emoncms.org"
     node_id = "sbfspot"
     URLstring = "https://" + emoncmsaddress + "/input/post?node=" + node_id + "&fulljson=" + str(smaJSONstring) + "&apikey=" + apikey
+    
+    #print(". Concatenate URL string")
     print URLstring
 
 
@@ -96,7 +98,6 @@ def main():
 
         OrderedDict_to_JSON()
 
-        print(". Concatenate URL string")
         url_stringing()
 
         send_to_emonCMS()
