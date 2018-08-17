@@ -10,6 +10,7 @@ import requests
 # With emonCMS already installed on a rPi, SBFspot will run fine. Tested using the default SBFspot SQLite.
 # The default SBFspot folder locations will need changing during install from /home/pi/smadata to /home/pi/data/smadata, for write permissions to not throw errors.
 # Change the folder locations in both SBFspot conf, and SBFspotUploadDaemon conf.
+# To get SBFspot to install you may need to use pip2 install ... to make sure packages are installed for python 2.
 
 #API KEY
 apikey = "yourapiwritekey"
