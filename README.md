@@ -7,3 +7,5 @@ python script to interface SBFspot and emonCMS, by reading the sbfspot database 
 
 . I place the python script file at /home/pi/scripts/  make it exacutable 'sudo chown 755 sbfspot_to_emonCMS.py'. Use cron to initiate at the same interval as SBFspotUploadDaemon by adding line: <br/>
 */5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null'
+
+. Included in the script folder is an example database and my python learning steps to complete this.
