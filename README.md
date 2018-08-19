@@ -27,3 +27,5 @@ Possible Improvement : Another one-time script could be made to upload the whole
 Big thanks to these guys: https://community.openenergymonitor.org/t/sbfspot/8245
 
 Thank you developer(s) of SBFspot, and to their Raspberry Pi install guide, which have given me greater understanding of how my rPi worked under the hood.
+
+*SBFspot is a tool for accessing the data stored in SMA solar inverters via bluetooth or ethernet.
