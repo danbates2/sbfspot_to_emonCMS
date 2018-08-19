@@ -1,6 +1,9 @@
 # SBFspot_to_emonCMS
 Python script to interface SBFspot and emonCMS, by reading the sbfspot database and then make a HTTP request to emonCMS.
 
+https://github.com/SBFspot/SBFspot/
+https://emoncms.org/
+
 . Works only by sending the most recent datapoint.
 
 . To get this working with SBFspot installed, this script placed in /home/pi/scripts make it exacutable $ sudo chown 755 sbfspot_to_emonCMS.py and $ crontab -e newline added:
@@ -9,7 +12,7 @@ __*/5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null__
 
 . The */5 is the interval in minutes, matching the SBFspotUploadDaemon default recommendation.
 
-. User must modify the script to include the emonCMS API Write key.
+. User must modify the script to include their emonCMS API Write key.
 
 . With emonCMS already installed on a rPi, SBFspot will run fine. Tested using the default SQLite.
 
@@ -21,3 +24,5 @@ __*/5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null__
 Possible Improvement : Another one-time script could be made to upload the whole database to emonCMS using the bulk-upload API.
 
 Big thanks to these guys: https://community.openenergymonitor.org/t/sbfspot/8245
+
+Thank you developer(s) of SBFspot, and to their poublication of the install guides, which have given me greater understanding of how my rPi worked under the hood.
