@@ -1,4 +1,4 @@
-# SBFspot_to_emonCMS
+# SBFspot to emonCMS
 Python script to interface SBFspot and emonCMS, by reading the sbfspot database and then make a HTTP request to emonCMS.
 
 https://github.com/SBFspot/SBFspot/
