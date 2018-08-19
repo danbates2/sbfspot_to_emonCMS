@@ -2,6 +2,7 @@
 Python script to interface SBFspot and emonCMS, by reading the sbfspot database and then make a HTTP request to emonCMS.
 
 https://github.com/SBFspot/SBFspot/
+
 https://emoncms.org/
 
 . Works only by sending the most recent datapoint.
@@ -25,4 +26,4 @@ Possible Improvement : Another one-time script could be made to upload the whole
 
 Big thanks to these guys: https://community.openenergymonitor.org/t/sbfspot/8245
 
-Thank you developer(s) of SBFspot, and to their poublication of the install guides, which have given me greater understanding of how my rPi worked under the hood.
+Thank you developer(s) of SBFspot, and to their Raspberry Pi install guide, which have given me greater understanding of how my rPi worked under the hood.
