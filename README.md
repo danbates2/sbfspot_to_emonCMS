@@ -1,5 +1,5 @@
 # SBFspot to emonCMS
-Python script to interface SBFspot and emonCMS, by reading the sbfspot database and then make a HTTP request to emonCMS.
+Python script to interface SBFspot and emonCMS, by reading the most recent sbfspot database entry and then make a HTTP request to emonCMS.
 
 https://github.com/SBFspot/SBFspot/
 
@@ -23,6 +23,7 @@ __*/5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null__
 
 
 Possible Improvement : Another one-time script could be made to upload the whole database to emonCMS using the bulk-upload API.
+Possible Improvement (minor) : To use the timestamp information to more accurately place the datapoints in time.
 
 Big thanks to these guys: https://community.openenergymonitor.org/t/sbfspot/8245
 
