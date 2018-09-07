@@ -7,7 +7,9 @@ https://emoncms.org/
 
 . Works only by sending the most recent datapoint.
 
-. To get this working with SBFspot installed, this script placed in /home/pi/scripts make it exacutable $ sudo chown 755 sbfspot_to_emonCMS.py and $ crontab -e newline added:
+. To get this working (with SBFspot already installed) place this script in /home/pi/scripts
+. make it exacutable _$ sudo chown 755 sbfspot_to_emonCMS.py_
+. and then type  _$ crontab -e_   and add a new line:
 
 __*/5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null__
 
@@ -17,7 +19,7 @@ __*/5 * * * * python /home/pi/scripts/sbfspot_to_emonCMS.py > /dev/null__
 
 . With emonCMS already installed on a rPi, SBFspot will run fine. Tested using the default SQLite.
 
-. With emonCMS Oct2017.img, the default SBFspot folder locations need changing during install from /home/pi/smadata to /home/pi/data/smadata, for write permissions to not throw errors. This will need changing in both SBFspot conf, and SBFspotUploadDaemon conf.
+. With emonCMS Oct2017.img, the default SBFspot folder locations need changing during install from /home/pi/smadata to /home/pi/data/smadata, for write permissions to not throw errors. This will need changing in both SBFspot conf, and SBFspotUploadDaemon conf. Future versions of emonCMS (emonSD) should not suffer this added requirement as the write lock is being removed.
 
 . Included in the script folder is an example database and my python learning steps to complete this.
 
