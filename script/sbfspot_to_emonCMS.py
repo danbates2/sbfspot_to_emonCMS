@@ -1,5 +1,5 @@
 #!/usr/bin/python
- 
+
 import sqlite3
 from sqlite3 import Error
 from collections import OrderedDict
@@ -14,7 +14,7 @@ import requests
 #API KEY
 apikey = "yourapikey"
 database = "/home/pi/data/smadata/SBFspot.db"
-
+emoncms_server = "http://emoncms.org"
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -27,7 +27,7 @@ def create_connection(db_file):
         return conn
     except Error as e:
         print(e)
-        
+
     return None
 
 
@@ -40,11 +40,11 @@ def list_headers(conn):
 
     #print(". List headers of table: SpotData")
     #print(names)
-    
+
 
 def display_last_from_table(conn):
     global rows
-    
+
     """
     Query all rows in the tasks table
     :param conn: the Connection object
@@ -59,7 +59,7 @@ def display_last_from_table(conn):
     #for row in rows:
         #print(row)
 
-            
+
 def OrderedDict_to_JSON(): #https://docs.python.org/2/library/collections.html#collections.OrderedDict
     global smaJSONstring
 
@@ -69,31 +69,31 @@ def OrderedDict_to_JSON(): #https://docs.python.org/2/library/collections.html#c
 
     #print(". Create OrderedDict from two lists and convert to JSON")
     #print (smaJSONstring)
-    
+
 
 def url_stringing():
     global URLstring
 
-    emoncmsaddress = "emoncms.org"
     node_id = "sbfspot"
-    URLstring = "https://" + emoncmsaddress + "/input/post?node=" + node_id + "&fulljson=" + str(smaJSONstring) + "&apikey=" + apikey
-    
+
+    URLstring = emoncms_server + "/input/post?node=" + node_id + "&fulljson=" + str(smaJSONstring) + "&apikey=" + apikey
+
     #print(". Concatenate URL string")
-    print URLstring
+    #print URLstring
 
 
 def send_to_emonCMS():
     r = requests.get(URLstring)
-    print (r)
+    #print (r)
 
-    
+
 def main():
-    
+
     # create a database connection
     conn = create_connection(database)
     with conn:
         list_headers(conn)
- 
+
         display_last_from_table(conn)
 
         OrderedDict_to_JSON()
@@ -101,6 +101,6 @@ def main():
         url_stringing()
 
         send_to_emonCMS()
-            
+
 if __name__ == '__main__':
     main()
